@@ -7,6 +7,7 @@ import { Button } from "./ui/button";
 import { Field, FieldLabel, FieldGroup, FieldDescription } from "./ui/field";
 import { Input } from "./ui/input";
 import { registerUser } from "@/services/auth/auth.service";
+import Link from "next/link";
 
 const RegisterForm = () => {
   const [role, setRole] = useState<"TOURIST" | "GUIDE">("TOURIST");
@@ -122,16 +123,16 @@ const RegisterForm = () => {
       </FieldGroup>
 
       <div className="mt-6 mb-4 text-center">
-        <Button type="submit" disabled={isPending} className="w-full md:w-auto">
+        <Button type="submit" disabled={isPending} className="w-full ">
           {isPending ? "Creating Account..." : "Create Account"}
         </Button>
       </div>
 
       <FieldDescription className="mt-4  text-center">
         Already have an account?{" "}
-        <a href="/login" className="text-blue-600 hover:underline">
+        <Link href="/login" className="text-blue-600 hover:underline">
           Log in
-        </a>
+        </Link>
       </FieldDescription>
     </form>
   );

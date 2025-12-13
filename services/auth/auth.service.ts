@@ -7,7 +7,7 @@ import {
   createTouristZodSchema,
   createGuideZodSchema,
 } from "@/zod/auth.validation";
-// import { loginUser } from "./loginUser";
+import { loginUser } from "./loginUser";
 
 export const registerUser = async (
   _currentState: any,
@@ -79,9 +79,9 @@ export const registerUser = async (
 
     const result = await res.json();
 
-    // if (result.success) {
-    //   await loginUser(_currentState, formData);
-    // }
+    if (result.success) {
+      await loginUser(_currentState, formData);
+    }
 
     return result;
   } catch (error: any) {
