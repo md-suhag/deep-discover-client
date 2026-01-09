@@ -5,44 +5,69 @@ const BACKEND_API_URL =
 
 const serverFetchHelper = async (
   endpoint: string,
-  options: RequestInit
-): Promise<Response> => {
+  options: RequestInit = {}
+): Promise<any> => {
   const { headers, ...restOptions } = options;
   const accessToken = await getCookie("accessToken");
 
-  const response = await fetch(`${BACKEND_API_URL}${endpoint}`, {
+  const config: RequestInit = {
+    ...restOptions,
     headers: {
-      Cookie: accessToken ? `accessToken=${accessToken}` : "",
+      "Content-Type": "application/json",
+      Authorization: accessToken ? `${accessToken}` : "",
       ...headers,
     },
-    ...restOptions,
-  });
+  };
 
-  return response;
+  try {
+    const response = await fetch(`${BACKEND_API_URL}${endpoint}`, config);
+
+    // Handle 401/403 or other errors appropriately if needed
+    // For now, we return the parsed JSON response
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Error fetching ${endpoint}:`, error);
+    throw error;
+  }
 };
 
 export const serverFetch = {
-  get: async (endpoint: string, options: RequestInit = {}): Promise<Response> =>
+  get: async (endpoint: string, options: RequestInit = {}): Promise<any> =>
     serverFetchHelper(endpoint, { ...options, method: "GET" }),
 
   post: async (
     endpoint: string,
+    body: any = {},
     options: RequestInit = {}
-  ): Promise<Response> =>
-    serverFetchHelper(endpoint, { ...options, method: "POST" }),
+  ): Promise<any> =>
+    serverFetchHelper(endpoint, {
+      ...options,
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
 
-  put: async (endpoint: string, options: RequestInit = {}): Promise<Response> =>
-    serverFetchHelper(endpoint, { ...options, method: "PUT" }),
+  put: async (endpoint: string, body: any = {}, options: RequestInit = {}): Promise<any> =>
+    serverFetchHelper(endpoint, {
+        ...options, 
+        method: "PUT",
+        body: JSON.stringify(body)
+    }),
 
   patch: async (
     endpoint: string,
+    body: any = {},
     options: RequestInit = {}
-  ): Promise<Response> =>
-    serverFetchHelper(endpoint, { ...options, method: "PATCH" }),
+  ): Promise<any> =>
+    serverFetchHelper(endpoint, { 
+        ...options, 
+        method: "PATCH",
+        body: JSON.stringify(body)
+    }),
 
   delete: async (
     endpoint: string,
     options: RequestInit = {}
-  ): Promise<Response> =>
+  ): Promise<any> =>
     serverFetchHelper(endpoint, { ...options, method: "DELETE" }),
 };

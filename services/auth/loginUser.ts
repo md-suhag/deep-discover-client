@@ -36,7 +36,9 @@ export const loginUser = async (
       loginValidationZodSchema
     ).data;
 
-    const res = await serverFetch.post("/auth/login", {
+    const BACKEND_API_URL = process.env.NEXT_PUBLIC_BASE_API_URL || "http://localhost:5000/api/v1";
+    const res = await fetch(`${BACKEND_API_URL}/auth/login`, {
+      method: "POST",
       body: JSON.stringify(validatedPayload),
       headers: {
         "Content-Type": "application/json",
