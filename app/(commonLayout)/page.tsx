@@ -4,6 +4,7 @@ import TopGuides from "@/components/home/TopGuides";
 import HowItWorks from "@/components/home/HowItWorks";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import CTASection from "@/components/home/CTASection";
+import FAQSection from "@/components/home/FAQSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HowItWorks />
       <TopGuides />
       <WhyChooseUs />
+      <FAQSection />
       <CTASection />
     </div>
   );
