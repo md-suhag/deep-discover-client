@@ -59,6 +59,11 @@ export const middlewareProxy = async (request: NextRequest) => {
   }
 
   if (routeOwner !== userRole) {
+     // Allow SUPER_ADMIN to access ADMIN routes
+     if (userRole === "SUPER_ADMIN" && routeOwner === "ADMIN") {
+        return NextResponse.next();
+     }
+
      // User is authenticated but doesn't have permission for this role-specific route
      // Redirect to their own dashboard
      return NextResponse.redirect(new URL(getDefaultDashboardRoute(userRole), request.url));

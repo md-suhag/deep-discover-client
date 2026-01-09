@@ -44,7 +44,7 @@ export const isRouteMatches = (
 
 export const getRouteOwner = (
   pathname: string
-): "ADMIN" | "TOURIST" | "GUIDE" | "COMMON" | null => {
+): "SUPER_ADMIN" | "ADMIN" | "TOURIST" | "GUIDE" | "COMMON" | null => {
   if (isRouteMatches(pathname, adminProtectedRoutes)) {
     return "ADMIN";
   }
@@ -62,6 +62,9 @@ export const getRouteOwner = (
 
 export const getDefaultDashboardRoute = (role: UserRole): string => {
   if (role === "ADMIN") {
+    return "/admin/dashboard";
+  }
+  if (role === "SUPER_ADMIN") {
     return "/admin/dashboard";
   }
   if (role === "GUIDE") {
