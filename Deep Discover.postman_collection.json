@@ -1,0 +1,1179 @@
+{
+	"info": {
+		"_postman_id": "ed502184-9e15-43ff-bd35-c1d90e725712",
+		"name": "Deep Discover",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50534690",
+		"_collection_link": "https://orange-shuttle-741132.postman.co/workspace/Team-Workspace~16996d43-fa10-4423-82b5-a64a6f818866/collection/50534690-ed502184-9e15-43ff-bd35-c1d90e725712?action=share&source=collection_link&creator=50534690"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"email\":\"powah88254@besenic.com\",\r\n    // \"password\":\"12345678\"\r\n\r\n    // user\r\n    \"email\":\"powah88254@besenica.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"powah88254@besenica.com\",\r\n    \"password\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTJmZjMxNTc3N2VlY2MyYzBhYmQ1YjAiLCJlbWFpbCI6InBvd2FoODgyNTRAYmVzZW5pY2EuY29tIiwicm9sZSI6IlRPVVJJU1QiLCJpYXQiOjE3NjQ3NTMwMDUsImV4cCI6MTc2NTE4NTAwNX0.GX6I2giUoTLQcy57yUgZ0ai2obneyzWL8pjf3_1beUs; Max-Age=432000; Path=/; Expires=Mon, 08 Dec 2025 09:10:05 GMT; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTJmZjMxNTc3N2VlY2MyYzBhYmQ1YjAiLCJlbWFpbCI6InBvd2FoODgyNTRAYmVzZW5pY2EuY29tIiwicm9sZSI6IlRPVVJJU1QiLCJpYXQiOjE3NjQ3NTMwMDUsImV4cCI6MTc2NzM0NTAwNX0.NnDoNq3NCo9wbKkavl7vqbWY9-CzPZlOnu9rKhgqfM0; Max-Age=2592000; Path=/; Expires=Fri, 02 Jan 2026 09:10:05 GMT; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-u8fk7XilGyVvH9csCDlh6TSYEqk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Dec 2025 09:10:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Login successfull\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create Tourist",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"suhag\",\r\n    \"email\":\"powah88254@besenica.com\",\r\n    \"password\":\"12345678\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/tourist",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"tourist"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"suhag\",\r\n    \"email\":\"powah88254@besenica.com\",\r\n    \"password\":\"12345678\"\r\n\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/tourist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"tourist"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52-4z8nHhl7JJEn4SQ9T3UlYL4SWH0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Dec 2025 08:21:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Registration successfull\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Guide",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"suhag\",\r\n    \"email\":\"powah88254@besenic.com\",\r\n    \"password\":\"12345678\",\r\n    \"dailyRate\":500,\r\n    \"expertise\":[\"food\"]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/guide",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"guide"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"suhag\",\r\n    \"email\":\"powah88254@besenica.com\",\r\n    \"password\":\"12345678\"\r\n\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/guide",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"guide"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "509"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1fd-3+IylrTFcRb1CReABtLvMLUOpss\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Dec 2025 08:23:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Email already exist!\",\n    \"errorSources\": [],\n    \"err\": {\n        \"statusCode\": 400\n    },\n    \"stack\": \"Error: Email already exist!\\n    at model.<anonymous> (C:\\\\All projects\\\\New folder\\\\New folder\\\\deep-discover-server\\\\src\\\\app\\\\modules\\\\user\\\\user.model.ts:53:11)\\n    at Generator.next (<anonymous>)\\n    at fulfilled (C:\\\\All projects\\\\New folder\\\\New folder\\\\deep-discover-server\\\\src\\\\app\\\\modules\\\\user\\\\user.model.ts:5:58)\\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\"\n}"
+						},
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"suhag\",\r\n    \"email\":\"powah88254@besenic.com\",\r\n    \"password\":\"12345678\",\r\n    \"dailyRate\":500,\r\n    \"expertise\":[\"food\"]\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/guide",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"guide"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52-4z8nHhl7JJEn4SQ9T3UlYL4SWH0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Dec 2025 08:34:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Registration successfull\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Connected Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/connected-account",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"connected-account"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/connected-account",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"connected-account"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "224"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e0-WtIXof0lWnRoVNFgOWAnsIgSqNo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Dec 2025 16:25:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Connected Account link created\",\n    \"data\": {\n        \"message\": \"New Stripe account created. Complete onboarding.\",\n        \"url\": \"https://connect.stripe.com/setup/e/acct_1SbOIVDZMo8xoNX5/pNgAdHWTGQB2\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Listing",
+			"item": [
+				{
+					"name": "Create Listing",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\n\n  \"title\": \"Sunset Boat Tour on the Buriganga River\",\n  \"description\": \"Experience a peaceful evening boat ride with a local guide, exploring riverside culture and hidden gems.\",\n  \"itinerary\": [\n    \"Meet at Sadarghat Terminal\",\n    \"Board the wooden boat\",\n    \"River cruise during sunset\",\n    \"Visit nearby local markets\",\n    \"Return to Sadarghat\"\n  ],\n  \"price\": 2500,\n  \"duration\": 3,\n  \"meetingPoint\": \"Sadarghat Ferry Terminal, Dhaka\",\n  \"maxGroupSize\": 10,\n  \"city\": \"Dhaka\",\n  \"country\": \"Bangladesh\",\n  \"category\": \"Culture & Sightseeing\",\n  \"languages\": [\"English\", \"Bangla\"]\n}",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/C:/Users/SUHAG/Downloads/icons8-website-50.png",
+										"/C:/Users/SUHAG/Downloads/icons8-linkedin-48.png"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/listings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"listings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Listing",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Sunset Boat Tour on the Buriganga River Updated 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/listings/6932fb7de6f5aa7692ca6569",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"listings",
+								"6932fb7de6f5aa7692ca6569"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Sunset Boat Tour on the Buriganga River Updated 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/listings/6932fb7de6f5aa7692ca6569",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"listings",
+										"6932fb7de6f5aa7692ca6569"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1086"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"43e-vOHRovU0t3C0XJ88hACS1lT29Ns\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Dec 2025 04:59:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Listing updated successfully\",\n    \"data\": {\n        \"_id\": \"6932fb7de6f5aa7692ca6569\",\n        \"guide\": \"692ff60274807104a89f433f\",\n        \"title\": \"Sunset Boat Tour on the Buriganga River Updated 2\",\n        \"description\": \"Experience a peaceful evening boat ride with a local guide, exploring riverside culture and hidden gems.\",\n        \"itinerary\": [\n            \"Meet at Sadarghat Terminal\",\n            \"Board the wooden boat\",\n            \"River cruise during sunset\",\n            \"Visit nearby local markets\",\n            \"Return to Sadarghat\"\n        ],\n        \"price\": 2500,\n        \"duration\": 3,\n        \"meetingPoint\": \"Sadarghat Ferry Terminal, Dhaka\",\n        \"maxGroupSize\": 10,\n        \"images\": [\n            \"https://res.cloudinary.com/dolgvnlsd/image/upload/v1764948860/deep_discover/7hgrl2axg5-1764948857403-icons8-website-50.png\",\n            \"https://res.cloudinary.com/dolgvnlsd/image/upload/v1764948860/deep_discover/c7w76mlm4jh-1764948857404-icons8-linkedin-48.png\"\n        ],\n        \"status\": \"ACTIVE\",\n        \"city\": \"Dhaka\",\n        \"country\": \"Bangladesh\",\n        \"category\": \"Culture & Sightseeing\",\n        \"languages\": [\n            \"English\",\n            \"Bangla\"\n        ],\n        \"createdAt\": \"2025-12-05T15:34:21.235Z\",\n        \"updatedAt\": \"2025-12-06T04:59:37.284Z\",\n        \"slug\": \"sunset-boat-tour-on-the-buriganga-river\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Single Listing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/listings/6932fb7de6f5aa7692ca6569",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"listings",
+								"6932fb7de6f5aa7692ca6569"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/listings/6932fb7de6f5aa7692ca6569",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"listings",
+										"6932fb7de6f5aa7692ca6569"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1160"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"488-F4Rg5lHhtCj2Id2rPRWPNUH05Sg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Dec 2025 05:08:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Listing retrieved successfully\",\n    \"data\": {\n        \"_id\": \"6932fb7de6f5aa7692ca6569\",\n        \"guide\": {\n            \"_id\": \"692ff60274807104a89f433f\",\n            \"name\": \"suhag\",\n            \"email\": \"powah88254@besenic.com\",\n            \"profilePic\": \"\"\n        },\n        \"title\": \"Sunset Boat Tour on the Buriganga River Updated 2\",\n        \"description\": \"Experience a peaceful evening boat ride with a local guide, exploring riverside culture and hidden gems.\",\n        \"itinerary\": [\n            \"Meet at Sadarghat Terminal\",\n            \"Board the wooden boat\",\n            \"River cruise during sunset\",\n            \"Visit nearby local markets\",\n            \"Return to Sadarghat\"\n        ],\n        \"price\": 2500,\n        \"duration\": 3,\n        \"meetingPoint\": \"Sadarghat Ferry Terminal, Dhaka\",\n        \"maxGroupSize\": 10,\n        \"images\": [\n            \"https://res.cloudinary.com/dolgvnlsd/image/upload/v1764948860/deep_discover/7hgrl2axg5-1764948857403-icons8-website-50.png\",\n            \"https://res.cloudinary.com/dolgvnlsd/image/upload/v1764948860/deep_discover/c7w76mlm4jh-1764948857404-icons8-linkedin-48.png\"\n        ],\n        \"status\": \"ACTIVE\",\n        \"city\": \"Dhaka\",\n        \"country\": \"Bangladesh\",\n        \"category\": \"Culture & Sightseeing\",\n        \"languages\": [\n            \"English\",\n            \"Bangla\"\n        ],\n        \"createdAt\": \"2025-12-05T15:34:21.235Z\",\n        \"updatedAt\": \"2025-12-06T04:59:37.284Z\",\n        \"slug\": \"sunset-boat-tour-on-the-buriganga-river\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Listing",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/listings/6933bab827e5e9b30f5adc82",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"listings",
+								"6933bab827e5e9b30f5adc82"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/listings/6933bab827e5e9b30f5adc82",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"listings",
+										"6933bab827e5e9b30f5adc82"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"56-wjzCtHsJ/Tlm6QHHBgOXF8U3rtg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Dec 2025 05:10:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Listing deleted successfully\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Listings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/listings?searchTerm=dhaka",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"listings"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "dhaka"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/listings?searchTerm=dhaka",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"listings"
+									],
+									"query": [
+										{
+											"key": "searchTerm",
+											"value": "dhaka"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "590"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24e-1EMA1wLtTnkaWv3FlJFkXbJ9vlo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Dec 2025 05:23:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"All Listing retrieved successfully\",\n    \"meta\": {\n        \"page\": 1,\n        \"limit\": 10,\n        \"total\": 1,\n        \"totalPage\": 1\n    },\n    \"data\": [\n        {\n            \"_id\": \"6932fb7de6f5aa7692ca6569\",\n            \"title\": \"Sunset Boat Tour on the Buriganga River Updated 2\",\n            \"price\": 2500,\n            \"duration\": 3,\n            \"images\": [\n                \"https://res.cloudinary.com/dolgvnlsd/image/upload/v1764948860/deep_discover/7hgrl2axg5-1764948857403-icons8-website-50.png\",\n                \"https://res.cloudinary.com/dolgvnlsd/image/upload/v1764948860/deep_discover/c7w76mlm4jh-1764948857404-icons8-linkedin-48.png\"\n            ],\n            \"city\": \"Dhaka\",\n            \"slug\": \"sunset-boat-tour-on-the-buriganga-river\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Request A Booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"listing\": \"6932fb7de6f5aa7692ca6569\",\r\n  \"date\": \"2025-01-12T10:00:00.000Z\",\r\n  \"notes\": \"We prefer an early morning tour.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bookings/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bookings",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"listing\": \"6932fb7de6f5aa7692ca6569\",\r\n  \"date\": \"2025-01-12T10:00:00.000Z\",\r\n  \"notes\": \"We prefer an early morning tour.\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/bookings/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bookings",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "450"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c2-S1WP0bG7hVcAZ2SdEQZL9CtiYJY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Dec 2025 12:40:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Booking request sent successfully\",\n    \"data\": {\n        \"guide\": \"692ff60274807104a89f433f\",\n        \"tourist\": \"692ff315777eecc2c0abd5b0\",\n        \"listing\": \"6932fb7de6f5aa7692ca6569\",\n        \"date\": \"2025-01-12T10:00:00.000Z\",\n        \"price\": 2500,\n        \"status\": \"PENDING\",\n        \"paymentStatus\": \"UNPAID\",\n        \"notes\": \"We prefer an early morning tour.\",\n        \"_id\": \"693424498f95568cd1c576dd\",\n        \"createdAt\": \"2025-12-06T12:40:41.548Z\",\n        \"updatedAt\": \"2025-12-06T12:40:41.548Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Accept or Reject Booking",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"ACCEPTED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bookings/693424498f95568cd1c576dd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bookings",
+								"693424498f95568cd1c576dd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"ACCEPTED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/bookings/693424498f95568cd1c576dd",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bookings",
+										"693424498f95568cd1c576dd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "447"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1bf-tSLJ/PBg9q8XtdpoKFZw0bPlH2U\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Dec 2025 15:07:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Booking ACCEPTED successfully\",\n    \"data\": {\n        \"_id\": \"693424498f95568cd1c576dd\",\n        \"guide\": \"692ff60274807104a89f433f\",\n        \"tourist\": \"692ff315777eecc2c0abd5b0\",\n        \"listing\": \"6932fb7de6f5aa7692ca6569\",\n        \"date\": \"2025-01-12T10:00:00.000Z\",\n        \"price\": 2500,\n        \"status\": \"ACCEPTED\",\n        \"paymentStatus\": \"UNPAID\",\n        \"notes\": \"We prefer an early morning tour.\",\n        \"createdAt\": \"2025-12-06T12:40:41.548Z\",\n        \"updatedAt\": \"2025-12-06T15:07:54.813Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Pay for booking",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bookings/693424498f95568cd1c576dd/pay",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bookings",
+								"693424498f95568cd1c576dd",
+								"pay"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Ok",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{baseUrl}}/bookings/693424498f95568cd1c576dd/pay",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bookings",
+										"693424498f95568cd1c576dd",
+										"pay"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "163"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a3-ArNLKqEOsQlGMIAgKCTxLBV4CZo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Dec 2025 18:03:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Booking Completed successfully\",\n    \"data\": {\n        \"clientSecret\": \"pi_3ScrjiD8rvFcbu2d0xtqvRr9_secret_YMGkN3L7pPNUfU73LzsvKwhGq\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:2500/api/v1"
+		}
+	]
+}
